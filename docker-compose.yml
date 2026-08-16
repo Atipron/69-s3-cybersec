@@ -1,0 +1,46 @@
+services:
+  # 1. Database Service
+  db:
+    image: postgres:15-alpine
+    container_name: cybersec_db
+    env_file:
+      - .env.db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  # 2. Admin Service (Mock Container สำหรับทดสอบ .env.admin)
+  admin:
+    image: alpine
+    container_name: cybersec_admin
+    command: tail -f /dev/null
+    env_file:
+      - .env.admin
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  # 3. App Service (Mock Container สำหรับทดสอบ .env.app)
+  app:
+    image: alpine
+    container_name: cybersec_app
+    command: tail -f /dev/null
+    env_file:
+      - .env.app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db_data:

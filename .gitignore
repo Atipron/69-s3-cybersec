@@ -1,0 +1,10 @@
+# ซ่อนไฟล์ environment ที่มีรหัสผ่านจริงทั้งหมด
+.env
+.env.db
+.env.admin
+.env.app
+*.env
+
+# อนุญาตให้ส่งไฟล์ตัวอย่างแม่แบบ (.env.simple) ขึ้น GitHub ได้
+!.env.simple
+!.env.example
