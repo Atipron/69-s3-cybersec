@@ -1,12 +1,7 @@
+# Cyber Security
 
-```
-rmutp
-└─ docker-compose.yml
+## My Information
 
-```
-```
-rmutp
-├─ docker-compose.yml
-└─ README.md
-
-```
+* Atipron Wardim
+* 056860405XXX
+* To gain deep technical knowledge in Cyber Security and Ethical Hacking.
